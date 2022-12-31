@@ -115,6 +115,11 @@ public class Main {
 
 
 
+        Track tr2 = new Track;
+        for(int i=0; i<TrackList;i++) {
+			tr2.add(i)
+				
+			}
 
 
     }
