@@ -111,14 +111,19 @@ public class Main {
     	
     	
         int sum=30;
+        int currentSum=0;
         System.out.println(TrackList.get(2).getDuration());
 
 
 
         Track tr2 = new Track;
+        if(currentsum<=30) {
         for(int i=0; i<TrackList;i++) {
 			tr2.add(i)
+			currentSum=currentSum+TrackList.get(i).getDuration();
 				
+			}else {
+				System.out.println("");
 			}
 
 
