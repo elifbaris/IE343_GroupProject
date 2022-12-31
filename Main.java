@@ -108,6 +108,8 @@ public class Main {
     }
 
     public static void albumAssembler(){
+    	
+    	int sum=30;
 
         System.out.println(TrackList.get(2).getDuration());
 
