@@ -1,0 +1,4 @@
+First we created an array list named TackList before the main method.
+Changed the code of for loop and made it into a for loop that gives the sequential value, individual value and track id.
+The reason we wrote 0,5 and 4 is to fetch the desired datas from the lines in the data.cvs. 
+Then we added Track tr into the TrackList array list.
