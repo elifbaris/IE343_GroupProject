@@ -92,8 +92,8 @@ public class Main {
             for(List<String> list : data)
             {
                 for(String str : list){}
-                //	System.out.print(str + " ");
-                //System.out.println();
+                System.out.print(str + " ");
+                System.out.println();
             }
             br.close();
             return data;
