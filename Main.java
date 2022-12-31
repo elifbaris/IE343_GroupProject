@@ -11,7 +11,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException{
         List<List<String>> list = readValues();
-        // System.out.println(list.get(0));  // Prints empty object
+        System.out.println(list.get(0)); 
         List<Integer> valueList = new ArrayList<Integer>();
         List<Integer> weightList = new ArrayList<Integer>();
         for(int i=1;i<list.size();i++) {
@@ -27,7 +27,7 @@ public class Main {
             }
             sequential_data.add(row);
         }
-        // 	System.out.println(sequential_data.get(0).get(1));
+        System.out.println(sequential_data.get(0).get(1));
 
 
 
@@ -35,12 +35,12 @@ public class Main {
     public static List<List<String>> readValues() throws IOException {
         try
         {
-            List< List<String> > data = new ArrayList<>();//list of lists to store data
-            String file = "term_project_value_data.csv";//file path
+            List< List<String> > data = new ArrayList<>();
+            String file = "term_project_value_data.csv";
             FileReader fr = new FileReader(file);
             BufferedReader br = new BufferedReader(fr);
 
-            //Reading until we run out of lines
+            
             String line = br.readLine();
             while(line != null)
             {
@@ -50,10 +50,10 @@ public class Main {
             }
 
 
-            //printing the fetched data
+            
             for (int j = 1; j < data.size() ; j++)
             {
-                Track tr = new Track(					//Adding the values to the track object
+                Track tr = new Track(					
                         Integer.parseInt(data.get(j).get(0)),
                         Integer.parseInt(data.get(j).get(5)),
                         Integer.parseInt(data.get(j).get(4))
