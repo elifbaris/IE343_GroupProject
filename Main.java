@@ -29,9 +29,10 @@ public class Main {
             }
             sequential_data.add(row);
         }
-        System.out.println(sequential_data.get(0).get(1));
-
-
+       // System.out.println(sequential_data.get(0).get(1));
+        
+        System.out.println(getTrackCombinations(TrackList,1800000));
+        
 
     }
     public static List<List<String>> readValues() throws IOException {
@@ -51,8 +52,7 @@ public class Main {
                 line = br.readLine();
             }
 
-
-            
+ 
             for (int j = 1; j < data.size() ; j++)
             {
                 Track tr = new Track(					
@@ -94,8 +94,8 @@ public class Main {
             for(List<String> list : data)
             {
                 for(String str : list){}
-                System.out.print(str + " ");
-                System.out.println();
+               // System.out.print(str + " ");
+               // System.out.println();
             }
             br.close();
             return data;
@@ -109,24 +109,30 @@ public class Main {
 
     }
 
-    public static void albumAssembler(){
-    	
+	public static List<List<Integer>> getTrackCombinations(List<Track> trackList, int maxDuration) {
+		List<List<Integer>> trackCombinations = new ArrayList<>();
+		int n = trackList.size();
 
-        int currentSum=0;
-        for(int i=0; i<TrackList.size();i++) {
-        	currentSum=TrackList.get(i).getDuration;
-        	for(int j=0; j<TrackList.size();j++ ) {	
-        	currentSum=currentSum+TrackList.get(j).getDuration();	
-        	if(currentsum<=30) {
-        	  if(TrackList(i)!=TrackList(j)) {
-    			 currentSum=currentSum+TrackList.get(j).getDuration();
-    			 }
-        	  else break;
-        	}
-        	else break;
-        }
+		// generate all bit masks for the tracks
+		for (int i = 0; i < (1 << n); i++) {
+			List<Integer> combination = new ArrayList<>();
+			int duration = 0;
+			for (int j = 0; j < n; j++) {
+				if ((i & (1 << j)) > 0) {
+					// track j is included in this combination
+					Track track = trackList.get(j);
+					combination.add(track.getId());
+					duration += track.getDuration();
+				}
+			}
+			if (duration <= maxDuration) {
+				// combination is valid, add it to the list
+				trackCombinations.add(combination);
+			}
+		}
 
-    }
+		return trackCombinations;
+	}
 
 
 }
