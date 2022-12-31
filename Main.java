@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import javax.sound.midi.Track;
 public class Main {
 
     public static ArrayList<Track> TrackList = new ArrayList<>();
@@ -109,23 +111,20 @@ public class Main {
 
     public static void albumAssembler(){
     	
-    	
-        int sum=30;
+
         int currentSum=0;
-        System.out.println(TrackList.get(2).getDuration());
-
-
-
-        Track tr2 = new Track;
-        if(currentsum<=30) {
-        for(int i=0; i<TrackList;i++) {
-			tr2.add(i)
-			currentSum=currentSum+TrackList.get(i).getDuration();
-				
-			}else {
-				System.out.println("");
-			}
-
+        for(int i=0; i<TrackList.size();i++) {
+        	currentSum=TrackList.get(i).getDuration;
+        	for(int j=0; j<TrackList.size();j++ ) {	
+        	currentSum=currentSum+TrackList.get(j).getDuration();	
+        	if(currentsum<=30) {
+        	  if(TrackList(i)!=TrackList(j)) {
+    			 currentSum=currentSum+TrackList.get(j).getDuration();
+    			 }
+        	  else break;
+        	}
+        	else break;
+        }
 
     }
 
